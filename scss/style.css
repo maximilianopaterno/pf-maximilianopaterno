@@ -1,0 +1,496 @@
+@charset "UTF-8";
+.logo_landing {
+  background-image: url(https://img.freepik.com/vector-gratis/fondo-hexagonal-estilo-degradado_52683-61751.jpg?w=740&t=st=1681572191~exp=1681572791~hmac=69ac18cd1e904461af2f7d632c454694ec238051c3b1cc488d55534f7bdfadf4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 90%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo_landing .logo {
+  position: relative;
+  animation: blur-in 1s linear both;
+}
+@keyframes blur-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.logo_landing h1 {
+  position: relative;
+  color: white;
+  width: 280px;
+  animation: blur-in 1.5s linear both;
+}
+@keyframes blur-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.logo_landing .btn_inicio {
+  display: inline-block;
+  position: relative;
+  top: 250px;
+  left: -360px;
+  border: 1px solid white;
+  padding: 7px 7px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: darkgrey;
+}
+.logo_landing .btn_inicio:hover {
+  background-color: black;
+  color: white;
+  animation: bounce-left 0.9s linear both;
+}
+@keyframes bounce-left {
+  0% {
+    transform: translateX(-48px);
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(-26px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translateX(-13px);
+    animation-timing-function: ease-in;
+  }
+  82% {
+    transform: translateX(-6.5px);
+    animation-timing-function: ease-in;
+  }
+  93% {
+    transform: translateX(-4px);
+    animation-timing-function: ease-in;
+  }
+  25%, 55%, 75%, 87%, 98% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contenedor, .logo_landing {
+    zoom: 70%;
+  }
+  .logo_landing h1 {
+    width: 170px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  .contenedor, .logo_landing {
+    zoom: 70%;
+  }
+  .logo_landing h1 {
+    width: 190px;
+  }
+}
+.redes {
+  background-color: rgba(128, 128, 128, 0.589);
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.redes a {
+  margin: 0 15px;
+}
+.redes .icon_1:hover, .redes .icon_2:hover, .redes .icon_3:hover {
+  display: inline-block;
+  animation: scale-down-bottom 0.6s;
+}
+@keyframes scale-down-bottom {
+  0% {
+    transform: scale(1);
+    transform-origin: center bottom;
+  }
+  100% {
+    transform: scale(0.5);
+    transform-origin: center bottom;
+  }
+}
+
+@keyframes wobble-horizontal-bottom {
+  0%, 100% {
+    transform: translateX(0);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.menu {
+  width: 100%;
+  height: 70px;
+  display: inline-flex;
+  background-image: url(https://img.freepik.com/vector-gratis/fondo-hexagonal-estilo-degradado_52683-61751.jpg?w=740&t=st=1681572191~exp=1681572791~hmac=69ac18cd1e904461af2f7d632c454694ec238051c3b1cc488d55534f7bdfadf4);
+}
+.menu .navbar {
+  padding: 10px;
+  animation: blur-in 2.5s linear both;
+  /* Estilo del boton cuando se pasa el mouse por encima*/
+  /* Estilo del boton cuando el menú está expandido*/
+  /*Estilo cuando el mouse pasa encima de cada link del menu*/
+}
+@keyframes blur-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.menu .navbar ul {
+  display: none;
+}
+.menu .navbar input:checked ~ ul {
+  display: block;
+  position: fixed;
+}
+.menu .navbar input {
+  display: none;
+}
+.menu .navbar label {
+  background-color: white;
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.menu .navbar label:hover {
+  background: rgb(214, 214, 38);
+}
+.menu .navbar input:checked ~ label {
+  background: white;
+}
+.menu .navbar ul {
+  margin-top: 0;
+  padding: 0;
+  width: 130px;
+}
+.menu .navbar li {
+  display: block;
+  background-color: white;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  border: 1px solid;
+  position: static;
+}
+.menu .navbar li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu .navbar li:hover {
+  background-color: #dddcd6;
+  border: 1px solid black;
+  zoom: 105%;
+}
+.menu .logo {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  animation: blur-in 1.5s linear both;
+}
+@keyframes blur-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.menu .logo .titulo_menu {
+  width: 105px;
+  color: white;
+  font-size: 17px;
+}
+.menu .logo:hover {
+  animation: wobble-horizontal-bottom 0.2s linear both;
+}
+
+main {
+  background-color: rgba(128, 128, 128, 0.589);
+  width: 100%;
+}
+
+#posiciones {
+  text-align: center;
+  padding-top: 75px;
+  padding-bottom: 5px;
+}
+#posiciones .titulo_posiciones {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(128, 128, 128, 0.774);
+  animation: tracking-in-contract 1s linear both;
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 0.6em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+#posiciones h5 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+#posiciones .tablaA, #posiciones .tablaB, #posiciones .tablaC {
+  padding-bottom: 50px;
+}
+#posiciones .tablaA, #posiciones .tablaB {
+  float: left;
+}
+#posiciones .tablaC {
+  display: block;
+  margin: 0 auto;
+}
+
+#programacion {
+  padding-bottom: 30px;
+  padding-top: 75px;
+}
+#programacion .titulo_programacion {
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(128, 128, 128, 0.774);
+  animation: tracking-in-contract 1s linear both;
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 0.6em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+#programacion .program_fecha {
+  display: inline;
+  text-align: center;
+}
+#programacion .program_fecha .titulo_program_fecha {
+  display: flex;
+  justify-content: center;
+}
+#programacion .program_fecha .fecha1, #programacion .program_fecha .fecha2, #programacion .program_fecha .fecha3 {
+  display: block;
+  padding: 15px;
+  padding-bottom: 30px;
+}
+#programacion .program_fecha .fecha1 .titulo, #programacion .program_fecha .fecha2 .titulo, #programacion .program_fecha .fecha3 .titulo {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+#programacion .program_fecha .fecha1 .titulo h5, #programacion .program_fecha .fecha2 .titulo h5, #programacion .program_fecha .fecha3 .titulo h5 {
+  width: 250px;
+  border: 1px solid;
+  padding: 10px 10px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+#programacion .program_fecha .fecha1 table, #programacion .program_fecha .fecha2 table, #programacion .program_fecha .fecha3 table {
+  display: inline;
+  width: 50%;
+}
+#programacion .program_fecha .fecha1 table img, #programacion .program_fecha .fecha2 table img, #programacion .program_fecha .fecha3 table img {
+  width: 30px;
+  height: 30px;
+}
+#programacion .program_fecha .fecha1 table img:hover, #programacion .program_fecha .fecha2 table img:hover, #programacion .program_fecha .fecha3 table img:hover {
+  animation: wobble-horizontal-bottom 0.2s linear both;
+}
+#programacion .program_fecha .fecha1 table tr, #programacion .program_fecha .fecha1 table td, #programacion .program_fecha .fecha2 table tr, #programacion .program_fecha .fecha2 table td, #programacion .program_fecha .fecha3 table tr, #programacion .program_fecha .fecha3 table td {
+  padding: 10px;
+  text-align: center;
+  font-size: 15px;
+  border: none;
+}
+#programacion .program_fecha .fecha1 table tr:hover, #programacion .program_fecha .fecha1 table td:hover, #programacion .program_fecha .fecha2 table tr:hover, #programacion .program_fecha .fecha2 table td:hover, #programacion .program_fecha .fecha3 table tr:hover, #programacion .program_fecha .fecha3 table td:hover {
+  zoom: 110%;
+}
+#programacion .program_fecha .fecha1 table h8, #programacion .program_fecha .fecha2 table h8, #programacion .program_fecha .fecha3 table h8 {
+  color: red;
+  text-decoration: underline;
+}
+#programacion .btn_volver {
+  text-align: center;
+}
+#programacion .btn_volver:hover {
+  animation: jello-horizontal 0.5s linear both;
+}
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+#programacion .btn_volver a {
+  text-decoration: none;
+  border: 1px solid;
+  padding: 5px 10px;
+  color: black;
+  font-weight: bold;
+  background-color: rgba(128, 128, 128, 0.774);
+}
+#programacion .btn_volver a:hover {
+  background: rgb(214, 214, 38);
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  display: block;
+  text-align: center;
+}
+footer .redes {
+  background-image: url(https://img.freepik.com/vector-gratis/fondo-hexagonal-estilo-degradado_52683-61751.jpg?w=740&t=st=1681572191~exp=1681572791~hmac=69ac18cd1e904461af2f7d632c454694ec238051c3b1cc488d55534f7bdfadf4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+}
+footer .redes .titulo_redes {
+  display: flex;
+  width: 100%;
+  animation: tracking-in-contract 1s linear both;
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 0.6em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+footer .redes .titulo_redes h3 {
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+footer .redes .redes_footer {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-evenly;
+  animation: blur-in 1s linear both;
+}
+@keyframes blur-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+footer .redes .redes_footer a {
+  text-decoration: none;
+  color: white;
+}
+footer .redes .redes_footer .redes-icon0:hover {
+  animation: wobble-horizontal-bottom 0.2s linear both;
+}
+footer .redes .redes_footer .redes-icon1:hover {
+  animation: wobble-horizontal-bottom 0.2s linear both;
+}
+footer .redes .redes_footer .redes-icon2:hover {
+  animation: wobble-horizontal-bottom 0.2s linear both;
+}
+
+/*# sourceMappingURL=style.css.map */

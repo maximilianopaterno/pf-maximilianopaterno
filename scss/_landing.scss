@@ -1,0 +1,117 @@
+//Fondo principal
+$fondo:  url(https://img.freepik.com/vector-gratis/fondo-hexagonal-estilo-degradado_52683-61751.jpg?w=740&t=st=1681572191~exp=1681572791~hmac=69ac18cd1e904461af2f7d632c454694ec238051c3b1cc488d55534f7bdfadf4);
+
+.logo_landing
+{
+    background-image: $fondo;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 90%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    .logo
+    {
+       position: relative;
+       animation:blur-in 1.0s linear both; 
+            @keyframes blur-in
+                {
+                0%{filter:blur(12px);opacity:0}
+                100%{filter:blur(0);opacity:1}
+                }
+    }
+    h1
+    {
+        position: relative;
+        color: white;
+        width: 280px;
+        animation:blur-in 1.5s linear both; 
+            @keyframes blur-in
+                {
+                0%{filter:blur(12px);opacity:0}
+                100%{filter:blur(0);opacity:1}
+                }
+    } 
+    .btn_inicio
+    {
+        display: inline-block;
+        position: relative;
+        top: 250px;
+        left: -360px;   
+        border: 1px solid white;
+        padding: 7px 7px;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        background-color: darkgrey;
+        &:hover
+               {
+                    background-color: black;
+                    color: white;
+                    animation:bounce-left .9s linear both;
+                    @keyframes bounce-left
+                    {   0%{transform:translateX(-48px);animation-timing-function:ease-in;opacity:1}
+                        24%{opacity:1}
+                        40%{transform:translateX(-26px);animation-timing-function:ease-in}
+                        65%{transform:translateX(-13px);animation-timing-function:ease-in}
+                        82%{transform:translateX(-6.5px);animation-timing-function:ease-in}
+                        93%{transform:translateX(-4px);animation-timing-function:ease-in}
+                        25%,55%,75%,87%,98%{transform:translateX(0);animation-timing-function:ease-out}
+                        100%{transform:translateX(0);animation-timing-function:ease-out;opacity:1}
+                    }
+               } 
+    }
+}
+
+@media screen and (max-width:480px) 
+{
+    .contenedor, .logo_landing
+    {
+        zoom: 70%;
+    }
+    .logo_landing h1
+    {
+        width: 170px;
+    }
+}
+@media screen and (max-width: 1360px)
+{
+    .contenedor, .logo_landing
+    {
+        zoom: 70%;
+    }
+    .logo_landing h1
+    {
+        width: 190px;
+    }
+   
+}
+
+.redes
+{
+    background-color: rgba(128, 128, 128, 0.589);
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a
+        {
+            margin: 0 15px;
+        }
+    .icon_1, .icon_2, .icon_3
+    {
+        &:hover
+        {
+            display: inline-block;
+            animation:scale-down-bottom 0.6s; 
+
+            @keyframes scale-down-bottom
+            {
+                0%{transform:scale(1);transform-origin:center bottom}
+                100%{transform:scale(.5);transform-origin:center bottom}
+            }
+        }
+    }    
+}
+

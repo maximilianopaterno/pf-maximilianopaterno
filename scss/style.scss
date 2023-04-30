@@ -1,0 +1,369 @@
+@use 'landing';
+
+//Fondo principal
+$fondo:  url(https://img.freepik.com/vector-gratis/fondo-hexagonal-estilo-degradado_52683-61751.jpg?w=740&t=st=1681572191~exp=1681572791~hmac=69ac18cd1e904461af2f7d632c454694ec238051c3b1cc488d55534f7bdfadf4);
+
+//animaciones iconos de redes sociales y escudos de equipos
+$animacion_iconos: wobble-horizontal-bottom .2s linear both;
+@keyframes wobble-horizontal-bottom
+{
+    0%,100%{transform:translateX(0);transform-origin:50% 50%}
+    15%{transform:translateX(-30px) rotate(-6deg)}
+    30%{transform:translateX(15px) rotate(6deg)}
+    45%{transform:translateX(-15px) rotate(-3.6deg)}
+    60%{transform:translateX(9px) rotate(2.4deg)}
+    75%{transform:translateX(-6px) rotate(-1.2deg)}                      
+} 
+
+
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+//Inicio Header
+header
+{
+    position: sticky;
+    top: 0;  
+    z-index: 1;
+}
+.menu
+{
+    width: 100%;
+    height: 70px;
+    display: inline-flex;
+    background-image: $fondo;
+    .navbar
+           { 
+            padding: 10px; 
+            animation:blur-in 2.5s linear both; 
+            @keyframes blur-in
+                {
+                0%{filter:blur(12px);opacity:0}
+                100%{filter:blur(0);opacity:1}
+                }
+            
+
+                //Inicio Menu Hamburguesa
+                ul
+                {
+                    display: none;
+                }
+                input:checked  ~ ul
+                {
+                    display: block;
+                    position: fixed;
+                }
+                
+                input
+                {
+                    display: none;
+                }
+                
+                label 
+                {
+                    background-color: white;
+                    box-sizing: border-box;
+                    display: inline-block;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    font-weight: bold;
+                    text-align: center;
+                   
+                }
+                
+                /* Estilo del boton cuando se pasa el mouse por encima*/
+                label:hover{
+                    background:rgb(214, 214, 38);
+                }
+                
+                /* Estilo del boton cuando el menú está expandido*/
+                input:checked ~ label {
+                    background: white; 
+                }
+                
+                ul
+                {
+                    margin-top:0;
+                    padding: 0;
+                    width: 130px;
+                }
+                
+                li 
+                {
+                    display: block;
+                    background-color: white;
+                    margin: 0;
+                    padding: 10px;
+                    list-style: none;
+                    border: 1px solid;
+                    position: static;
+                    a
+                    {
+                        text-decoration: none;
+                        font-weight: bold;
+                    }
+                }
+                
+                /*Estilo cuando el mouse pasa encima de cada link del menu*/
+                li:hover 
+                {
+                    background-color: #dddcd6;
+                    border: 1px solid black;
+                    zoom:105%;
+                }
+                // Fin Menu Hamburguesa
+            }
+               
+    .logo
+            {
+                display: inline-flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                animation:blur-in 1.5s linear both; 
+                @keyframes blur-in
+                {
+                    0%{filter:blur(12px);opacity:0}
+                    100%{filter:blur(0);opacity:1}
+                }
+                .titulo_menu
+                        {
+                            width: 105px;
+                            color: white;
+                            font-size: 17px;
+                        }
+                        &:hover
+                        {
+                            animation: $animacion_iconos;
+                        }  
+                    }
+}
+//Fin Header
+//Inicio Main
+main
+{
+    background-color: rgba(128, 128, 128, 0.589);
+    width: 100%;
+}
+//Inicio ID posiciones
+#posiciones
+{
+    text-align: center;
+    padding-top: 75px ;
+    padding-bottom: 5px;
+    .titulo_posiciones
+            {
+                width: 100%;
+                text-align: center;
+                font-weight: bold;
+                background-color: rgba(128, 128, 128, 0.774);
+                animation:tracking-in-contract 1.0s linear both; 
+                @keyframes tracking-in-contract
+                {
+                    0%{letter-spacing:.6em;opacity:0}
+                    40%{opacity:.6}
+                    100%{letter-spacing:normal;opacity:1}
+                }
+            }
+    h5
+            {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+    .tablaA, .tablaB, .tablaC
+            {
+                padding-bottom: 50px;
+            }
+                    
+    .tablaA, .tablaB
+            {
+                float: left;
+
+            }        
+    .tablaC
+            {
+                display: block;
+                margin: 0 auto;
+            }
+}
+//Fin ID posiciones
+//Inicio ID programacion
+#programacion
+{
+    padding-bottom: 30px;
+    padding-top: 75px;
+    .titulo_programacion
+            {
+                text-align: center;
+                font-weight: bold;
+                background-color: rgba(128, 128, 128, 0.774);
+                animation:tracking-in-contract 1.0s linear both; 
+                @keyframes tracking-in-contract
+                {
+                    0%{letter-spacing:.6em;opacity:0}
+                    40%{opacity:.6}
+                    100%{letter-spacing:normal;opacity:1}
+                }
+            }
+    .program_fecha
+            {
+                display: inline;
+                text-align: center;
+                .titulo_program_fecha
+                        {
+                            display: flex;
+                            justify-content: center;
+                        }
+                .fecha1, .fecha2, .fecha3
+                        {
+                            display: block;
+                            padding: 15px;
+                            padding-bottom: 30px;
+                            .titulo
+                            {
+                                width: 100%;
+                                text-align: center;
+                                display: flex;
+                                justify-content: center;
+                                padding-bottom: 10px;
+                                h5
+                                    {
+                                        width: 250px;
+                                        border: 1px solid;
+                                        padding: 10px 10px;
+                                        background-color: black;
+                                        color: white;
+                                        font-weight: bold;
+                                    }
+                            }
+                            table
+                                {
+                                    display: inline;
+                                    width: 50%;
+                                    img
+                                    {
+                                        width: 30px;
+                                        height: 30px;
+                                        &:hover
+                                        {
+                                            animation: $animacion_iconos;
+                                        }
+                                    }
+                                    tr, td
+                                    {
+                                        padding: 10px;
+                                        text-align: center;
+                                        font-size: 15px;
+                                        border: none;
+                                        &:hover
+                                        {
+                                            zoom: 110%;
+                                        }
+                                    }
+                                    h8
+                                    {
+                                        color: red;
+                                        text-decoration: underline;
+                                    }
+                                }
+                        }   
+            }  
+    .btn_volver
+            {
+                text-align: center;
+                &:hover
+                {
+                        
+                        animation:jello-horizontal .5s linear both; @keyframes jello-horizontal{0%{transform:scale3d(1,1,1)}30%{transform:scale3d(1.25,.75,1)}40%{transform:scale3d(.75,1.25,1)}50%{transform:scale3d(1.15,.85,1)}65%{transform:scale3d(.95,1.05,1)}75%{transform:scale3d(1.05,.95,1)}100%{transform:scale3d(1,1,1)}}
+                }
+
+                a
+                    {
+                        text-decoration: none;
+                        border: 1px solid;
+                        padding: 5px 10px;
+                        color: black;
+                        font-weight: bold;
+                        background-color: rgba(128, 128, 128, 0.774);
+                        &:hover
+                            {
+                                background:rgb(214, 214, 38);
+                            }    
+                    }
+            }
+            
+                      
+}
+//Fin ID programacion
+//Fin Main
+//Inicio Footer
+footer
+{
+    width: 100%;
+    height: auto;
+    display: block;
+    text-align: center;
+    .redes
+        {
+            background-image: $fondo;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            .titulo_redes
+                        {
+                            display: flex;
+                            width: 100%;
+                            animation:tracking-in-contract 1.0s linear both; 
+                            @keyframes tracking-in-contract
+                                {
+                                    0%{letter-spacing:.6em;opacity:0}
+                                    40%{opacity:.6}
+                                    100%{letter-spacing:normal;opacity:1}
+                                }    
+                            h3
+                                {
+                                    font-size: 15px;
+                                    color: white;
+                                    text-align: center;
+                                    width: 100%;
+                                }
+                        }
+            .redes_footer
+                        {
+                            display: inline-flex;
+                            width: 100%;
+                            justify-content: space-evenly;
+                            animation:blur-in 1.0s linear both; 
+                            @keyframes blur-in
+                                {
+                                0%{filter:blur(12px);opacity:0}
+                                100%{filter:blur(0);opacity:1}
+                                }  
+                            a
+                                {
+                                    text-decoration: none;
+                                    color: white;
+                                }
+                                .redes-icon0:hover
+                                {
+                                animation: $animacion_iconos
+                                }
+                                .redes-icon1:hover
+                                {
+                                animation: $animacion_iconos
+                                } .redes-icon2:hover
+                                {
+                                animation: $animacion_iconos
+                                }
+                                                
+                        }
+        }
+}
+//Fin Footer
